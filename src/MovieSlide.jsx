@@ -17,6 +17,7 @@ const MovieSlide = ({ slideData }) => {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3.5}
+        initialSlide={2}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -28,10 +29,10 @@ const MovieSlide = ({ slideData }) => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {slideData.map((movieItem, i) => {
+        {slideData.map((movieItem) => {
           return (
             <SwiperSlide key={movieItem.id} className="SwiperSlide">
-              <img src={movieImages(i + 1)} width="90%" />
+              <img src={movieImages(movieItem.id)} width="90%" />
             </SwiperSlide>
           );
         })}
