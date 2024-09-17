@@ -25,14 +25,18 @@ const MovieSlide = ({ slideData }) => {
           modifier: 1,
           slideShadows: false,
         }}
-        pagination={true}
+        pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
         {slideData.map((movieItem) => {
           return (
             <SwiperSlide key={movieItem.id} className="SwiperSlide">
-              <img src={movieImages(movieItem.id)} width="90%" />
+              <img
+                src={movieImages(movieItem.id)}
+                alt={`Movie ${movieItem.id}`}
+                width="90%"
+              />
             </SwiperSlide>
           );
         })}
