@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import "./App.css";
 import SlideList from "./SlideList";
-import MovieSlide from "./MovieSlide.jsx";
+import MovieSlide from "./components/MovieSlide.js";
 const data = [
   {
     id: 1,

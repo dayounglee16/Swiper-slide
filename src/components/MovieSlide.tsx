@@ -3,12 +3,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "./index.css";
+import "../index.css";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import { movieImages } from "./movie-images";
+import { movieImages } from "../movie-images";
 
-const MovieSlide = ({ slideData }) => {
+interface MovieItem {
+  id: number;
+}
+
+interface MovieSlideProps {
+  slideData: MovieItem[];
+}
+
+const MovieSlide: React.FC<MovieSlideProps> = ({ slideData }) => {
   return (
     <>
       <h2>(2) Swiper 영화 슬라이드</h2>
@@ -29,7 +37,7 @@ const MovieSlide = ({ slideData }) => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {slideData.map((movieItem) => {
+        {slideData.map((movieItem: MovieItem) => {
           return (
             <SwiperSlide key={movieItem.id} className="SwiperSlide">
               <img
